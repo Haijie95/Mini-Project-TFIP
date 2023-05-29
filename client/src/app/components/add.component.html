@@ -1,0 +1,72 @@
+<form [formGroup]="form" (ngSubmit)="addToCollection()">
+  <h1>Add Card</h1>
+  <ff-alerts></ff-alerts>
+  <table>
+    <tr>
+      <td>
+        <label>Card Name:</label>
+      </td>
+      <mat-form-field>
+        <mat-label>Charizard Vmax</mat-label>
+        <input matInput type="text" formControlName="cardname">
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td>
+        <label>Type:</label>
+      </td>
+      <mat-form-field>
+        <select matNativeControl required formControlName="type">
+          <option value="Graded">Graded</option>
+          <option value="Raw">Raw</option>
+        </select>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td>
+        <label>Condition:</label>
+      </td>
+      <mat-form-field>
+        <select matNativeControl required formControlName="cardcondition">
+          <option value="Mint">Mint</option>
+          <option value="Near Mint">Near Mint</option>
+          <option value="Very Lightly Played">Very Lightly Played</option>
+          <option value="Lightly Played">Lightly Played</option>
+          <option value="Creased">Creased</option>
+          <option value="Binder">Binder</option>
+          <option value="Damaged">Damaged</option>
+        </select>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td>
+        <label>Defect:</label>
+      </td>
+      <mat-form-field>
+        <mat-label>Eg, Whitening</mat-label>
+        <textarea matInput type="text" formControlName="defect"></textarea>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td>
+        <label>Price:</label>
+      </td>
+      <mat-form-field>
+        <mat-label>$ SGD</mat-label>
+        <input matInput type="text" formControlName="price">
+      </mat-form-field>
+    </tr>
+    <tr>
+      <td>
+        <label>Image:</label>
+      </td>
+        <input type="file" formControlName="image" accept=".png, .jpeg, .jpg" (change)="onImageSelected($event)">
+        <div *ngIf="form.get('image')?.invalid && form.get('image')?.touched" class="error-message">
+          Invalid image file type. Only PNG, JPEG, and JPG files are allowed.
+        </div>
+    </tr>
+    <td>
+      <button mat-button type="submit" [disabled]="form.invalid">Upload</button>
+    </td>
+  </table>
+</form>

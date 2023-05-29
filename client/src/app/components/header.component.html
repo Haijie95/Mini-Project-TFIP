@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <div class="header">
+    <div class="home-button">
+      <button mat-fab color="primary" [routerLink]="['/']">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+    <div class="app-title">
+      <h1>Pokemon Trading</h1>
+    </div>
+    <div>
+      <label>{{user?.displayname}}</label>
+    </div>
+    <div class="user-button">
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon></button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/api/login']" *ngIf="isLogin">Login</button>
+        <button mat-menu-item (click)="goAddCard()" *ngIf="!isLogin">Add card to market</button>
+        <button mat-menu-item (click)="getUserCollection()" *ngIf="!isLogin">See collections</button>
+        <button mat-menu-item (click)="logOut()" *ngIf="!isLogin">Log out</button>
+      </mat-menu>
+    </div>
+  </div>
+  <ff-alerts></ff-alerts>
+</mat-toolbar>

@@ -1,0 +1,70 @@
+<div class="offercontainer">
+  <form [formGroup]="form" (ngSubmit)="sendOffer()">
+    <h1>Accept or Offer!</h1>
+    <table>
+      <tr>
+        <td>
+          <label>Card ID:</label>
+        </td>
+        <mat-form-field>
+          <input matInput type="text" formControlName="id" [value]="id">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Seller's Email:</label>
+        </td>
+        <mat-form-field>
+          <mat-label>abc@email.com</mat-label>
+          <input matInput type="text" formControlName="email" [value]="email">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Card Name:</label>
+        </td>
+        <mat-form-field>
+          <input matInput type="text" formControlName="cardname" [value]="cardname">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Buyer's Email:</label>
+        </td>
+        <mat-form-field hintLabel="Enter a valid email!">
+          <mat-label>abc@email.com</mat-label>
+          <input matInput type="text" formControlName="offeremail">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Buyer's Name:</label>
+        </td>
+        <mat-form-field>
+          <mat-label>Eg. John</mat-label>
+          <input matInput type="text" formControlName="name">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Offer Price ($):</label>
+        </td>
+        <mat-form-field hintLabel="Price in SGD">
+          <mat-label>SGD</mat-label>
+          <input matInput type="text" formControlName="offerprice">
+        </mat-form-field>
+      </tr>
+      &nbsp;
+      <tr>
+      </tr>
+      <tr>
+        <td>
+          <button mat-button type="submit" [disabled]="form.invalid">Offer</button>
+        </td>
+        <td>
+          <button mat-button [routerLink]="['/api/market']">Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

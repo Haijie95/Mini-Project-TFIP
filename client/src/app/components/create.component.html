@@ -1,0 +1,64 @@
+<div class="formcontainer">
+  <mat-card class="bordered-card">
+  <form [formGroup]="form" (ngSubmit)="createUser()">
+    <h1>New User Creation!</h1>
+    <table>
+      <tr>
+        <td>
+          <label>Email:</label>
+        </td>
+        <mat-form-field hintLabel="Enter a valid email!">
+          <mat-label>abc@email.com</mat-label>
+          <input matInput type="text" formControlName="email">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Password:</label>
+        </td>
+        <mat-form-field hintLabel="8 characters password!">
+          <mat-label>********</mat-label>
+          <input matInput type="text" formControlName="password">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Display Name:</label>
+        </td>
+        <mat-form-field hintLabel="Max 15 characters">
+          <mat-label>user123</mat-label>
+          <input matInput type="text" formControlName="displayname">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td>
+          <label>Region:</label>
+        </td>
+        <mat-form-field hintLabel="Select your country!">
+          <mat-label>Eg. Singapore</mat-label>
+          <!-- <input matInput type="text" formControlName="region"> -->
+          <select matNativeControl required formControlName="region">
+            <option value="Singapore">Singapore</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Indonesia">Indonesia</option>
+          </select>
+        </mat-form-field>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <google-map height="300" width="300" [zoom]="zoom" [center]="center"></google-map>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button mat-button type="submit" [disabled]="form.invalid">Create</button>
+        </td>
+        <td>
+          <button mat-button [routerLink]="['/api/login']">Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</mat-card>
+</div>

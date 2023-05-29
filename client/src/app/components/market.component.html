@@ -1,0 +1,27 @@
+<form >
+  <table>
+    <tr>
+      <td><mat-icon>storefront</mat-icon></td>
+      <td><h2>Market</h2></td>
+      <td><button [routerLink]="['/']">Back</button></td>
+    </tr>
+  </table>
+  <div class="sets-grid">
+    <div *ngFor="let a of marketCard; let i = index" class="set-item">
+      <button>
+        <table>
+          <tr>Seller: {{a.displayname}}</tr>
+          <tr>Card  : {{a.cardname}}</tr>
+          <tr>
+            <img [src]="a.image" width="230" height="300">
+          </tr>
+          <tr>Condition : {{a.cardcondition}}</tr>
+          <tr>Defect  : {{a.defect}}</tr>
+          <tr>Price  : ${{a.price}}</tr>
+          <button (click)="acceptOfferPrice(i)">Accept/Offer</button>
+        </table>
+      </button>
+    </div>
+  </div>
+
+</form>

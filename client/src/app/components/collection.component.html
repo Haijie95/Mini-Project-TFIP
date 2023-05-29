@@ -1,0 +1,23 @@
+<p>Personal Collection</p><button [routerLink]="['/']">Back</button>
+<form >
+  <div class="sets-grid">
+    <div *ngFor="let a of marketCard; let i = index" class="set-item">
+      <button type="button">
+        <table>
+          <tr>ID: {{a.id}}</tr>
+          <tr>Card  : {{a.cardname}}</tr>
+          <tr>
+            <img [src]="a.image" width="250" height="300">
+          </tr>
+          <tr>Condition : {{a.cardcondition}}</tr>
+          <tr>Defect  : {{a.defect}}</tr>
+          <tr>Price  : ${{a.price}}</tr>
+          <tr>
+            <button class="hover-red" (click)="removeListing(i)"><mat-icon>delete</mat-icon></button>
+          </tr>
+        </table>
+      </button>
+    </div>
+  </div>
+
+</form>

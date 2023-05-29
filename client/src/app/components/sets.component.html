@@ -1,0 +1,25 @@
+<form >
+  <table>
+    <tr>
+      <td><mat-icon>dashboard</mat-icon></td>
+      <td><h2>Sets</h2></td>
+      <td><button [routerLink]="['/']">Back</button></td>
+      <td><button (click)="sortSetsByReleaseDate()">Sort by Date</button></td>
+    </tr>
+  </table>
+
+  <div class="sets-grid">
+    <div *ngFor="let s of sets; let i = index" class="set-item">
+      <button type="button" (click)="getSpecificSet(i)">
+        <table>
+          <tr>{{s.name}}</tr>
+          <tr>Release Date: {{s.releaseDate}}</tr>
+          <tr>
+            <img src="{{s.logo}}" width="300" height="200">
+          </tr>
+        </table>
+      </button>
+    </div>
+  </div>
+
+</form>

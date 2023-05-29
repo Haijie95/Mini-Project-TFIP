@@ -1,0 +1,24 @@
+<form >
+  <table>
+    <tr>
+      <td><h2>Showing Result for {{setCode}}:</h2></td>
+      <td><button [routerLink]="['/api/getAllSets']">Back</button></td>
+    </tr>
+  </table>
+
+  <div class="sets-grid">
+    <div *ngFor="let c of cards; let i = index" class="set-item">
+      <button (click)="goToLink(i)">
+        <table>
+          <tr>{{c.name}}</tr>
+          <tr>Name: {{c.name}}</tr>
+          <tr>
+            <img src="{{c.image}}" width="240" height="336">
+          </tr>
+          <tr>Market Price: ${{c.marketPrice}}</tr>
+        </table>
+      </button>
+    </div>
+  </div>
+
+</form>

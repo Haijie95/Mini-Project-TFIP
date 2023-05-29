@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.sets-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  grid-gap: 20px;
+}
+
+.set-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home-button {
+  margin-right: auto;
+}
+
+.app-title {
+  flex-grow: 1;
+  text-align: center;
+  font-family: Rockwell;
+}
+
+.user-button {
+  margin-right: auto;
+}
+
+body {
+  background-image: url('./images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-container {
+  align-content: center;
+}
+
+.card-item {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+button{
+  font-family: Rockwell;
+  font-weight: bold;
+}
+
+.bordered-card {
+  border: 10px solid #ccc;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height value as needed */
+}
+
+.hover-red:hover {
+  background-color: red;
+  /* Add any other styles you want to apply when hovering */
+}
+
+#search_input {font-size:18px;}
+.form-group{
+ margin-bottom: 10px;margin-top:50px;
+}
+.form-group label{
+ font-size:18px;
+ font-weight: 600;
+}
+.form-group input{
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-group input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
